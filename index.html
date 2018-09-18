@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+<!--    fancybox: -->
+<!--    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.min.js"></script>
+    
+    
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i|Pacifico" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="bookstrore_CSS.css">
+
+</head>
+
+<body>
+    <div id="pageBody">
+        <div class="container">
+
+
+
+
+
+            <div style="display: block; margin-bottom: 160px;">
+                
+                    <div class="col-xs-12 col-md-8" style="padding-left: 0;">
+                        <div id="logoHeader">
+                                <div id="logo">
+                                    <img src="comfy%20pepe.png">
+                                </div>
+
+                                <div id="header">
+                                    <h1><span>Welcome to</span> <span>Pepe's Bookstore</span></h1>
+                                </div>
+                        </div>
+                    </div>
+                
+                <div id="searchContainer" class="col-xs-10 col-md-4">
+                            <input type="text" name="searchbox" placeholder="Search for comfy books..." class="form-control" v-model="searchBox">
+                        </div>
+
+            
+            </div>
+
+
+
+
+            <div class="container" style="margin-top: 20px">
+                <div class="jumbotron text-justify">
+                    
+                    
+                    
+                    
+                    
+                    <div class="headingContainer">
+                        
+                        <div class="secondHeading text-left">
+                            <h2>Comfiest books for <span>wokest readers</span></h2>
+                        </div>
+        
+                        <div class="buttonGroup">
+
+                            <label class="langButton">
+                                    <button type="button" @click="langAll=true, langES=false, langEN=false">ALL</button>
+                            </label> 
+
+                            <label class="langButton">
+                                    <button type="button" @click="langAll=false, langES=true, langEN=false">ES</button>
+                            </label> 
+
+                            <label class="langButton">
+                                    <button type="button" @click="langAll=false, langES=false, langEN=true">EN</button>
+                            </label> 
+
+                        </div>
+                        
+                        
+                    </div>
+                    
+                    
+                    
+                    
+                    
+            <div id="bookContiner">
+                    
+                <template v-for="aBook in filteredBooks">
+                        
+                        <template v-if='(langAll==true)||(aBook.idioma=="en" && langEN==true)||(aBook.idioma=="es" && langES==true)'>
+                    
+                            
+                        <div class="f1_container">
+                                <div class="f1_card">
+
+                                    <div class="front face">
+                                        <img v-bind:src="aBook.portada" style="max-width: 300px; min-width: 200px; object-fit: contain">
+                                    </div>
+
+                                    <div class="face back">
+                                        <h3 class="bookHeading">{{aBook.titulo}}</h3>
+                                        <p class="bookDescription">{{aBook.descripcion}}</p>
+                                        <a data-fancybox="gallery" class="thumb" v-bind:href="aBook.detalle">
+                                            <img v-bind:src="aBook.portada" style="display: none">
+                                            <img src="click-to-zoom.png" class="zoomButton">
+                                        </a>
+                                    </div>
+                                </div>
+                        </div>  
+                            
+                        </template>    
+                    </template>
+                    
+            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+            <div class="container">
+                <div class="panel-footer text-center">
+                    <p> &copy; 2001 Pepe's Bookstore | All Rights Reserved</p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+        <script type="text/javascript" src="BookStore%20JS.js"></script>
+
+
+        
+</body>
+
+</html>
