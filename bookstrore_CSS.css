@@ -1,0 +1,227 @@
+/*  http://css3.bradshawenterprises.com/flip/    */
+
+.f1_container {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 300px;
+    height: 450px;
+    z-index: 1;
+    display: inline-flex;
+}
+
+.f1_container {
+    perspective: 1000;
+/*    width: 80%;*/
+}
+
+.f1_card {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 1.0s linear;
+}
+
+.f1_container:hover .f1_card {
+    transform: rotateY(180deg);
+    box-shadow: -5px 5px 5px #aaa;
+}
+
+.face.back>input:checked .f1_card {
+    transform: rotateY(180deg);
+    box-shadow: -5px 5px 5px #aaa;
+}
+
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.face.back {
+    display: block;
+    transform: rotateY(180deg);
+    box-sizing: border-box;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    background-color: #aaa;
+    position: relative;
+    max-width: 300px;
+    min-width: 200px;
+}
+
+.bookHeading {
+    font-size: 33px !important;
+    font-weight: bold !important;
+    margin-bottom: 0px;
+    padding-bottom: 90px;
+    height: 80px;
+    border-bottom: 2px solid #dddddd;
+
+}
+
+.bookDescription {
+    padding-top: 20px;
+    border-top: 2px solid #969696;
+    position: relative;
+    font-size: 18px !important;
+
+}
+
+
+
+.zoomButton {
+    height: 20%;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    opacity: 0.6;
+}
+
+
+.row {
+    padding-right: 0;
+}
+.col-xs-12{
+    padding-right: 0;
+}
+
+.jumbotron{
+    min-width: 320px;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+
+}
+
+.container{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+h1{
+    min-width: 100px;
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+#logoHeader{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    min-width: 300px;
+}
+
+
+#logo{
+    grid-column: 1/1;
+    display: flex;
+    justify-content: center;
+}
+
+#logo img{
+    max-height: 150px;
+    max-width: 150px;
+    min-width: 50px;
+    object-fit: contain;
+    
+}
+
+#header{
+    grid-column: 2/2;
+    display: flex;
+    align-self: center;
+    flex-wrap: nowrap;
+    
+}
+
+
+#searchContainer {
+    display: flex;
+    min-height: 150px;
+    max-width: 350px;
+    padding-left: 50px;
+    padding-right: 0;
+}
+
+#searchContainer input {
+    display: flex;
+    align-self: center;
+    margin-top: 5px;
+}
+
+h1>span, h2>span {
+    display: inline-block;
+}
+
+
+
+
+.langButton {
+     font-size: 20px;
+
+    
+}
+
+
+.headingContainer{
+    clear: left;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap;
+    padding-left: 40px;
+    padding-right: 40px;
+    
+    
+}
+
+
+
+.buttonGroup {
+
+}
+
+.secondHeading {
+    padding-bottom: 10px;
+}
+
+
+
+
+
+
+#bookContiner{
+    display: flex;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+
+
+h1 {
+    font-family: 'Pacifico', cursive;    
+}
+
+h2{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+}
+
+button, input {
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.bookDescription {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h3{
+        font-family: 'Open Sans', sans-serif;
+
+}
